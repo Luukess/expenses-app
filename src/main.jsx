@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import MyCoinWallet from "./MyCoinWallet.jsx";
+import App from "./McwApp.jsx";
 import "./index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <MyCoinWallet />
+    <App />
   </React.StrictMode>
 );
