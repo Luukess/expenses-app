@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./McwApp.jsx";
 import "./index.scss";
+import McwApp from "./mcwApp";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <McwApp />
   </React.StrictMode>
 );
