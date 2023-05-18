@@ -7,6 +7,7 @@ import PaidIcon from '@mui/icons-material/Paid';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import { sxStylesSidebar } from "./sidebar.style";
+import CustomListItem from "./components/CustomListItem";
 
 const Sidebar = (props) => {
 
@@ -25,36 +26,25 @@ const Sidebar = (props) => {
                     </IconButton>
                 </Box>
                 <List component="nav" aria-labelledby="nested-list-subheader">
-                    <ListItemButton sx={sxStylesSidebar.listItemButton}>
+                    <CustomListItem hideNav={hideNav} linkName={'Podsumowanie'}>
                         <DashboardIcon sx={sxStylesSidebar.listItemIcon} />
-                        <Box sx={!hideNav ? sxStylesSidebar.navLink : { ...sxStylesSidebar.navLink, opacity: 0 }} component='span'>
-                            {'Podsumowanie'}
-                        </Box>
-                    </ListItemButton>
-                    <ListItemButton sx={sxStylesSidebar.listItemButton}>
+                    </CustomListItem>
+
+                    <CustomListItem hideNav={hideNav} linkName={'Finanse'}>
                         <ShowChartIcon sx={sxStylesSidebar.listItemIcon} />
-                        <Box sx={!hideNav ? sxStylesSidebar.navLink : { ...sxStylesSidebar.navLink, opacity: 0 }} component='span'>
-                            {'Finanse'}
-                        </Box>
-                    </ListItemButton>
-                    <ListItemButton sx={sxStylesSidebar.listItemButton}>
+                    </CustomListItem>
+
+                    <CustomListItem hideNav={hideNav} linkName={'Portfele'}>
                         <WalletIcon sx={sxStylesSidebar.listItemIcon} />
-                        <Box sx={!hideNav ? sxStylesSidebar.navLink : { ...sxStylesSidebar.navLink, opacity: 0 }} component='span'>
-                            {'Portfele'}
-                        </Box>
-                    </ListItemButton>
-                    <ListItemButton sx={sxStylesSidebar.listItemButton}>
+                    </CustomListItem>
+
+                    <CustomListItem hideNav={hideNav} linkName={'Planer'}>
                         <BookIcon sx={sxStylesSidebar.listItemIcon} />
-                        <Box sx={!hideNav ? sxStylesSidebar.navLink : { ...sxStylesSidebar.navLink, opacity: 0 }} component='span'>
-                            {'Planer'}
-                        </Box>
-                    </ListItemButton>
-                    <ListItemButton sx={sxStylesSidebar.listItemButton}>
+                    </CustomListItem>
+
+                    <CustomListItem hideNav={hideNav} linkName={'Opłaty'}>
                         <PaidIcon sx={sxStylesSidebar.listItemIcon} />
-                        <Box sx={!hideNav ? sxStylesSidebar.navLink : { ...sxStylesSidebar.navLink, opacity: 0 }} component='span'>
-                            {'Opłaty'}
-                        </Box>
-                    </ListItemButton>
+                    </CustomListItem>
                 </List>
             </Box>
         </>
