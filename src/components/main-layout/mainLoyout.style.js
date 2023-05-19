@@ -7,6 +7,8 @@ export const sxStylesMainLayout = {
     childrenContainer: {
         width: '100%',
         backgroundColor: 'pink',
-        overflowY: 'auto'
+        overflowY: 'auto',
+        padding: '0px 16px'
     },
+
 }
