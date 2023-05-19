@@ -17,7 +17,7 @@ export const sxStylesSidebar = {
     },
     navButton: {
         fontSize: '26px',
-        transition: 'all 0.5s'
+        transition: 'transform 0.5s'
     },
     navButtonContainer: {
         padding: '0px 10px !important',

@@ -7,7 +7,7 @@ import PaidIcon from '@mui/icons-material/Paid';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import { sxStylesSidebar } from "./sidebar.style";
-import CustomListItem from "./components/CustomListItem";
+import CustomListItem from "./components/custom-list-item/CustomListItem";
 
 const Sidebar = (props) => {
 
