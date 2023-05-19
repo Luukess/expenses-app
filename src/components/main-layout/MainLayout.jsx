@@ -25,7 +25,7 @@ const MainLayout = ({ children }) => {
         <>
             <Header />
             <Box sx={sxStylesMainLayout.mainLayout}>
-                {!authValueContext.isAuth &&
+                {authValueContext.isAuth &&
                     <Sidebar hideNav={hideNav} setHideNav={setHideNav} />
                 }
                 <Box component='main' sx={sxStylesMainLayout.childrenContainer}>

@@ -23,7 +23,7 @@ const Header = () => {
             <AppBar position="static">
                 <Toolbar sx={{ minHeight: '64px', justifyContent: 'space-between' }}>
                     <Box component='div' sx={{ display: 'flex', alignItems: 'center' }}>
-                        {!authValuesContext.isAuth &&
+                        {authValuesContext.isAuth &&
                             <MobileNav />
                         }
                         <Typography sx={sxStylesHeader.logo}>
