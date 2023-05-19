@@ -3,6 +3,7 @@ import { AppBar, Toolbar, FormControlLabel, Switch, Box, Typography } from "@mui
 import { ThemeStateContext } from "../../contexts/theme-context/themeContext";
 import { AuthContext } from "../../contexts/auth-context/authContext";
 import { sxStylesHeader } from "./header.style";
+import MobileNav from "./components/mobile-nav/MobileNav";
 
 const Header = () => {
 
@@ -21,7 +22,10 @@ const Header = () => {
         <>
             <AppBar position="static">
                 <Toolbar sx={{ minHeight: '64px', justifyContent: 'space-between' }}>
-                    <Box component='div'>
+                    <Box component='div' sx={{ display: 'flex', alignItems: 'center' }}>
+                        {!authValuesContext.isAuth &&
+                            <MobileNav />
+                        }
                         <Typography sx={sxStylesHeader.logo}>
                             MyCoinWallet
                         </Typography>

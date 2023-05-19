@@ -5,6 +5,7 @@ export const sxStylesHeader = {
             sm: '18px',
             md: '20px',
             lg: '24px'
-        }
-    }
+        },
+        marginLeft: '14px'
+    },
 }
