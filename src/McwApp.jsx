@@ -5,6 +5,7 @@ import { ThemeStateContext } from './contexts/theme-context/themeContext';
 import MainLayout from './components/main-layout/MainLayout';
 import { AuthContext } from './contexts/auth-context/authContext';
 import { useAuth } from './hooks/auth-hook/authHook';
+import AppRouter from './routes/AppRouter';
 
 const McwApp = () => {
 
@@ -20,7 +21,7 @@ const McwApp = () => {
                     <AuthContext.Provider value={auth}>
                         <CssBaseline />
                         <MainLayout>
-
+                            <AppRouter />
                         </MainLayout>
                     </AuthContext.Provider>
                 </ThemeProvider>
