@@ -8,9 +8,9 @@ const CustomInput = (inputProps) => {
         '& .MuiInputBase-input': {
             borderRadius: 4,
             position: 'relative',
-            backgroundColor: theme.palette.mode === 'light' ? '#F3F6F9' : '#1A2027',
+            backgroundColor: theme.palette.mode === 'light' ? '#F3F6F9' : '#232323',
             border: '1px solid',
-            borderColor: theme.palette.mode === 'light' ? '#E0E3E7' : '#2D3843',
+            borderColor: theme.palette.mode === 'light' ? '#E0E3E7' : '#1c1c1c',
             padding: '10px 12px',
             transition: theme.transitions.create([
                 'border-color',

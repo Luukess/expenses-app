@@ -2,7 +2,13 @@ import { createTheme } from "@mui/material";
 
 export const darkTheme = createTheme({
     palette: {
-        mode: 'dark'
+        mode: 'dark',
+        primary: {
+            main: '#fe347e',
+            light: '#fe80ae',
+            dark: '#f4015a',
+            contrastText: '#ffffff'
+        }
     }
 });
 
