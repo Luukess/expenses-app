@@ -6,6 +6,7 @@ import { sxStylesHeader } from "./header.style";
 import MobileNav from "./components/mobile-nav/MobileNav";
 import NightsStayIcon from '@mui/icons-material/NightsStay';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import LngButton from "./components/lng-button/LngButton";
 
 const Header = () => {
 
@@ -33,6 +34,9 @@ const Header = () => {
                         </Typography>
                     </Box>
                     <Box component='div' sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <Box>
+                            <LngButton />
+                        </Box>
                         <SvgIcon fontSize="small" sx={sxStylesHeader.switchModeIcons}>
                             <WbSunnyIcon />
                         </SvgIcon>
