@@ -8,4 +8,10 @@ export const sxStylesHeader = {
         },
         marginLeft: '14px'
     },
+    switchModeIcons: {
+        display: {
+            xs: 'none',
+            sm: 'block'
+        }
+    }
 }

@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import { AppBar, Toolbar, FormControlLabel, Switch, Box, Typography } from "@mui/material";
+import { AppBar, Toolbar, FormControlLabel, Switch, Box, Typography, SvgIcon } from "@mui/material";
 import { ThemeStateContext } from "../../contexts/theme-context/themeContext";
 import { AuthContext } from "../../contexts/auth-context/authContext";
 import { sxStylesHeader } from "./header.style";
 import MobileNav from "./components/mobile-nav/MobileNav";
+import NightsStayIcon from '@mui/icons-material/NightsStay';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
 
 const Header = () => {
 
@@ -30,8 +32,16 @@ const Header = () => {
                             MyCoinWallet
                         </Typography>
                     </Box>
-                    <Box component='div'>
-                        <FormControlLabel control={<Switch onChange={(e) => setThemeMode(e.target.checked)} checked={themeMode} value={themeMode} />} />
+                    <Box component='div' sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <SvgIcon fontSize="small" sx={sxStylesHeader.switchModeIcons}>
+                            <WbSunnyIcon />
+                        </SvgIcon>
+                        <Box component='div'>
+                            <FormControlLabel sx={{ margin: '0px' }} control={<Switch onChange={(e) => setThemeMode(e.target.checked)} checked={themeMode} value={themeMode} />} />
+                        </Box>
+                        <SvgIcon fontSize="small" sx={sxStylesHeader.switchModeIcons} >
+                            <NightsStayIcon />
+                        </SvgIcon>
                     </Box>
                 </Toolbar>
             </AppBar>
