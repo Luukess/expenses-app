@@ -8,7 +8,7 @@ import ShowChartIcon from '@mui/icons-material/ShowChart';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import Header from "../header/Header";
 import { AuthContext } from "../../contexts/auth-context/authContext";
-import { sxStylesMainLayout } from "./mainLoyout.style";
+import { sxStylesMainLayout } from "./mainLayout.style";
 import Sidebar from "../sidebar/Sidebar";
 
 const MainLayout = ({ children }) => {
