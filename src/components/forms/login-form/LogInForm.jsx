@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import CustomInput from "../../custom-input/CustomInput";
 import { sxStylesLoginForm } from "./loginForm.styles";
@@ -19,6 +19,10 @@ const LoginForm = () => {
     const onSubmit = async (data) => {
         console.log(data);
     };
+
+    useEffect(() => {
+        document.title = 'MCW | Login';
+    }, []);
 
     return (
         <>

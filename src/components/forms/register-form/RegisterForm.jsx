@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, FormControlLabel, Button, Checkbox, Typography, useTheme } from "@mui/material";
 import CustomInput from "../../custom-input/CustomInput";
 import { sxStylesRegisterForm } from "./registerForm.style";
@@ -21,6 +21,10 @@ const RegisterForm = () => {
     const onSubmit = (data) => {
         console.log(data)
     };
+
+    useEffect(() => {
+        document.title = 'SWC | Registration';
+    }, [])
 
     return (
         <>
