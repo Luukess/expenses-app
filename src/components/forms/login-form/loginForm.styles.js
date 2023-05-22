@@ -1,6 +1,6 @@
 export const sxStylesLoginForm = {
     formBoxElement: {
-        padding: '10px'
+        padding: '8px'
     },
     formLoginInput: {
         width: '100%'

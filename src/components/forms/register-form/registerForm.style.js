@@ -1,6 +1,6 @@
 export const sxStylesRegisterForm = {
     boxFoemElement: {
-        padding: '10px'
+        padding: '8px'
     },
     formInputElement: {
         width: '100%'
@@ -10,6 +10,6 @@ export const sxStylesRegisterForm = {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        padding: '10px 20px'
+        padding: '8px 20px'
     }
 };

@@ -7,7 +7,6 @@ import { Outlet, useLocation } from "react-router-dom";
 const AuthLayout = () => {
 
     const location = useLocation();
-    console.log(location.pathname)
 
     return (
         <>
@@ -19,7 +18,7 @@ const AuthLayout = () => {
                         </SvgIcon>
                     </Avatar>
                     <Box>
-                        <Typography variant="h4" pt={6} pb={1} align="center">
+                        <Typography variant="h5" pt={6} pb={1} align="center">
                             Welcome to MyCoinWallet
                         </Typography>
                         <Typography p={1} align="center" >
