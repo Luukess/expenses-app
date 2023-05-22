@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
-import { ThemeProvider, CssBaseline } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 import { darkTheme, lightTheme } from './config/theme/theme';
 import { ThemeStateContext } from './contexts/theme-context/themeContext';
 import MainLayout from './components/main-layout/MainLayout';
