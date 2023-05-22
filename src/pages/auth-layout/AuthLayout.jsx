@@ -2,9 +2,12 @@ import React from "react";
 import { Avatar, Box, Paper, SvgIcon, Typography } from "@mui/material";
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import { sxStylesAuthLayout } from "./authLayout.style";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
-const AuthLayout = ({ children }) => {
+const AuthLayout = () => {
+
+    const location = useLocation();
+    console.log(location.pathname)
 
     return (
         <>
@@ -20,7 +23,8 @@ const AuthLayout = ({ children }) => {
                             Welcome to MyCoinWallet
                         </Typography>
                         <Typography p={1} align="center" >
-                            Sing in to your account
+                            {location.pathname !== '/register' && 'Sing in to your account'}
+                            {location.pathname === '/register' && 'Create new free account'}
                         </Typography>
                     </Box>
                     <Outlet />

@@ -18,6 +18,9 @@ const LoginForm = () => {
                     <Button aria-label="login-button" variant="contained" sx={sxStylesLoginForm.formLoginInput}>Log in</Button>
                 </Box>
             </Box>
+            <Box compoent='div' sx={sxStylesLoginForm.formBoxElement}>
+                <Button aria-label="create-account-button" variant='contained' sx={sxStylesLoginForm.formLoginInput} >Create new account</Button>
+            </Box>
         </>
     );
 };
