@@ -9,6 +9,9 @@ export const darkTheme = createTheme({
             dark: '#f4015a',
             contrastText: '#ffffff'
         }
+    },
+    typography: {
+        fontFamily: ['Lato', 'sans-serif'].join(',')
     }
 });
 
