@@ -2,8 +2,15 @@ import React from "react";
 import { Box, Button } from "@mui/material";
 import CustomInput from "../../custom-input/CustomInput";
 import { sxStylesLoginForm } from "./loginForm.styles";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+
+    const navigate = useNavigate();
+
+    const handleNavigateToRegisterForm = () => {
+        navigate('/register');
+    };
 
     return (
         <>
@@ -19,7 +26,7 @@ const LoginForm = () => {
                 </Box>
             </Box>
             <Box compoent='div' sx={sxStylesLoginForm.formBoxElement}>
-                <Button aria-label="create-account-button" variant='contained' sx={sxStylesLoginForm.formLoginInput} >Create new account</Button>
+                <Button onClick={handleNavigateToRegisterForm} aria-label="create-account-button" variant='contained' sx={sxStylesLoginForm.formLoginInput} >Create new account</Button>
             </Box>
         </>
     );
