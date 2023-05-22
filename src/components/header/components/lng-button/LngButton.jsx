@@ -1,19 +1,26 @@
 import React, { useRef, useState } from "react";
-import { Button, ButtonGroup, Popper, SvgIcon, Grow, Paper, MenuList, MenuItem, useTheme } from "@mui/material";
+import { Button, ButtonGroup, Popper, SvgIcon, Grow, Paper, MenuList, MenuItem, Box } from "@mui/material";
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import LanguageIcon from '@mui/icons-material/Language';
 import { sxStylesLngButton } from "./lngButton.style";
-const options = ['pl', 'en'];
+import { useTranslation } from "react-i18next";
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+
+const languages = [
+    { code: 'pl', name: 'Polski', country_code: 'pl' },
+    { code: 'en', name: 'English', country_code: 'gb' },
+];
+
 const LngButton = () => {
 
     const anchorRef = useRef(null);
-    const theme = useTheme();
+
+    const { i18n } = useTranslation();
 
     const [open, setOpen] = useState(false);
-    const [selectedIndex, setSelectedIndex] = useState(0);
 
-    const handleMenuItemClick = (event, index) => {
-        setSelectedIndex(index);
+    const handleMenuItemClick = (event, index, lngCode) => {
+        i18n.changeLanguage(lngCode);
         setOpen(false);
     };
 
@@ -65,13 +72,16 @@ const LngButton = () => {
                         <Paper>
                             <ClickAwayListener onClickAway={handleClose}>
                                 <MenuList id="split-button-menu" autoFocusItem>
-                                    {options.map((option, index) => (
+                                    {languages.map((lng, index) => (
                                         <MenuItem
-                                            key={option}
-                                            selected={index === selectedIndex}
-                                            onClick={(event) => handleMenuItemClick(event, index)}
+                                            key={lng.country_code}
+                                            selected={localStorage.getItem('i18nextLng') === lng.code}
+                                            onClick={(event) => handleMenuItemClick(event, index, lng.code)}
                                         >
-                                            {option}
+                                            <Box component='span' className={`fi fi-${lng.country_code}`}></Box>
+                                            <Box component='span'>
+                                                {lng.name}
+                                            </Box>
                                         </MenuItem>
                                     ))}
                                 </MenuList>
