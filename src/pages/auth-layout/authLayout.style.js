@@ -1,4 +1,4 @@
-export const sxStylesLoginPage = {
+export const sxStylesAuthLayout = {
     loginPageContainer: {
         width: '100%',
         height: '100%',
@@ -15,10 +15,9 @@ export const sxStylesLoginPage = {
         transform: 'translate(-50%, -50%)',
         backgroundColor: '#ccac00'
     },
-    formBoxElement: {
-        padding: '10px'
-    },
-    formLoginInput: {
-        width: '100%'
+    avatarIcon: {
+        width: '100%',
+        height: '100%',
+        color: '#ffd700'
     }
-}
+};
