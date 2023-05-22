@@ -7,8 +7,8 @@ export const sxStylesAuthLayout = {
         alignItems: 'center'
     },
     loginAvatar: {
-        height: '120px',
-        width: '120px',
+        height: '100px',
+        width: '100px',
         position: 'absolute',
         top: '0',
         left: '50%',
