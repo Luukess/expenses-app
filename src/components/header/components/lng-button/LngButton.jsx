@@ -78,7 +78,7 @@ const LngButton = () => {
                                             selected={localStorage.getItem('i18nextLng') === lng.code}
                                             onClick={(event) => handleMenuItemClick(event, index, lng.code)}
                                         >
-                                            <Box component='span' className={`fi fi-${lng.country_code}`}></Box>
+                                            <Box component='span' mr={0.5} className={`fi fi-${lng.country_code}`}></Box>
                                             <Box component='span'>
                                                 {lng.name}
                                             </Box>
