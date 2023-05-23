@@ -15,5 +15,10 @@
   "form-repeat-password-message": "Hasła nie są podobne",
   "confirm-regulations-label": "Potwierdź regulamin",
   "register-button": "Zarejestruj się",
-  "back-to-login-button": "Wróć do logowania"
+  "back-to-login-button": "Wróć do logowania",
+  "summary-nav-item": "Podsumowanie",
+  "finances-nav-item": "Finances",
+  "wallets-nav-item": "Portfele",
+  "planner-nav-item": "Planer",
+  "fees-nav-item": "Opłaty"
 }

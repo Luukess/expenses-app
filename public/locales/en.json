@@ -15,5 +15,10 @@
   "form-repeat-password-message": "The passwords are not similar",
   "confirm-regulations-label": "Confirm regulations",
   "register-button": "Register",
-  "back-to-login-button": "Back to login"
+  "back-to-login-button": "Back to login",
+  "summary-nav-item": "Summary",
+  "finances-nav-item": "Finanse",
+  "wallets-nav-item": "Wallets",
+  "planner-nav-item": "Planner",
+  "fees-nav-item": "Fees"
 }

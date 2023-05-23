@@ -1,11 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Box, IconButton, List, ListItemButton } from "@mui/material";
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import WalletIcon from '@mui/icons-material/Wallet';
-import BookIcon from '@mui/icons-material/Book';
-import PaidIcon from '@mui/icons-material/Paid';
-import ShowChartIcon from '@mui/icons-material/ShowChart';
-import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
+import { Box } from "@mui/material";
 import Header from "../header/Header";
 import { AuthContext } from "../../contexts/auth-context/authContext";
 import { sxStylesMainLayout } from "./mainLayout.style";
