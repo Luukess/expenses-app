@@ -7,10 +7,13 @@ import BookIcon from '@mui/icons-material/Book';
 import PaidIcon from '@mui/icons-material/Paid';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import { sxStylesMobileNav } from "./mobileNav.style";
+import { useTranslation } from "react-i18next";
 
 const MobileNav = () => {
 
     const [isOpen, setIsOpen] = useState(false);
+
+    const { t } = useTranslation();
 
     const handleOpenNav = () => setIsOpen(true);
 
@@ -35,23 +38,23 @@ const MobileNav = () => {
                         </Box>
                         <List component='nav'>
                             <ListItemButton onClick={() => { setIsOpen(false) }} sx={sxStylesMobileNav.navListItemButton}>
-                                <DashboardIcon sx={sxStylesMobileNav.listItemIcon} /> Podsumowanie
+                                <DashboardIcon sx={sxStylesMobileNav.listItemIcon} /> {`${t('summary-nav-item')}`}
                             </ListItemButton>
 
                             <ListItemButton onClick={() => { setIsOpen(false) }} sx={sxStylesMobileNav.navListItemButton}>
-                                <ShowChartIcon sx={sxStylesMobileNav.listItemIcon} /> Finanse
+                                <ShowChartIcon sx={sxStylesMobileNav.listItemIcon} /> {`${t('finances-nav-item')}`}
                             </ListItemButton>
 
                             <ListItemButton onClick={() => { setIsOpen(false) }} sx={sxStylesMobileNav.navListItemButton}>
-                                <WalletIcon sx={sxStylesMobileNav.listItemIcon} /> Portfele
+                                <WalletIcon sx={sxStylesMobileNav.listItemIcon} /> {`${t('wallets-nav-item')}`}
                             </ListItemButton>
 
                             <ListItemButton onClick={() => { setIsOpen(false) }} sx={sxStylesMobileNav.navListItemButton}>
-                                <BookIcon sx={sxStylesMobileNav.listItemIcon} /> Planer
+                                <BookIcon sx={sxStylesMobileNav.listItemIcon} /> {`${t('planner-nav-item')}`}
                             </ListItemButton>
 
                             <ListItemButton onClick={() => { setIsOpen(false) }} sx={sxStylesMobileNav.navListItemButton}>
-                                <PaidIcon sx={sxStylesMobileNav.listItemIcon} /> Opłaty
+                                <PaidIcon sx={sxStylesMobileNav.listItemIcon} /> {`${t('fees-nav-item')}`}
                             </ListItemButton>
                         </List>
                     </Box>
