@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import AuthLayout from "../pages/auth-layout/AuthLayout";
 import LoginForm from "../components/forms/login-form/LogInForm";
 import RegisterForm from "../components/forms/register-form/RegisterForm";
@@ -16,7 +16,7 @@ const AuthRouter = () => {
                     <Route path="register" element={<RegisterForm />} />
                 </Route>
                 <Route element={<AuthLayout />}>
-                    <Route path='*' element={<LoginForm />} />
+                    <Route path='*' element={<Navigate to='/login' />} />
                 </Route>
             </Routes>
         </>

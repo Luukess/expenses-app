@@ -10,9 +10,8 @@ i18n.use(initReactI18next).use(LanguageDetector).use(HttpApi).init({
         order: ['localStorage', 'cookie'],
         caches: ['cookie', 'localStorage']
     },
-    // ns: ['en', 'pl'],
     backend: {
-        loadPath: './locales/{{lng}}.json'
+        loadPath: '/locales/{{lng}}.json'
     },
     react: {
         useSuspense: false,
