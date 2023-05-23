@@ -7,6 +7,7 @@ import MainLayout from './components/main-layout/MainLayout';
 import { AuthContext } from './contexts/auth-context/authContext';
 import { useAuth } from './hooks/auth-hook/authHook';
 import AppRouter from './routes/AppRouter';
+import Toastify from './components/toastify/Toastify';
 
 const McwApp = () => {
 
@@ -24,6 +25,7 @@ const McwApp = () => {
                         <MainLayout>
                             <AppRouter />
                         </MainLayout>
+                        <Toastify />
                     </AuthContext.Provider>
                 </ThemeProvider>
             </ThemeStateContext.Provider>
