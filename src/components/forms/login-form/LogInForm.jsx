@@ -4,11 +4,13 @@ import CustomInput from "../../custom-input/CustomInput";
 import { sxStylesLoginForm } from "./loginForm.styles";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 const LoginForm = () => {
 
     const navigate = useNavigate();
     const theme = useTheme();
+    const { t } = useTranslation();
 
     const handleNavigateToRegisterForm = () => {
         navigate('/register');
@@ -28,11 +30,11 @@ const LoginForm = () => {
         <>
             <Box component='form' onSubmit={handleSubmit(onSubmit)}>
                 <Box sx={sxStylesLoginForm.formBoxElement} >
-                    <CustomInput aria-label="login-input" sx={sxStylesLoginForm.formLoginInput} placeholder='Email' type='text' {...register('userName', {
-                        required: 'Field is required',
+                    <CustomInput aria-label="login-input" sx={sxStylesLoginForm.formLoginInput} placeholder={`${t('email-placeholder')}`} type='text' {...register('userName', {
+                        required: `${t('form-required-message')}`,
                         pattern: {
                             value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                            message: 'Inncorect email'
+                            message: `${t('form-incorrect-email-message')}`
                         }
                     })} />
                     <Typography fontSize={14} ml={1} color={theme.palette.error.main}>
@@ -40,11 +42,11 @@ const LoginForm = () => {
                     </Typography>
                 </Box>
                 <Box sx={sxStylesLoginForm.formBoxElement} >
-                    <CustomInput aria-label="password-input" sx={sxStylesLoginForm.formLoginInput} placeholder='Password' type='password' {...register('password', {
-                        required: 'Field is required',
+                    <CustomInput aria-label="password-input" sx={sxStylesLoginForm.formLoginInput} placeholder={`${t('password-placeholder')}`} type='password' {...register('password', {
+                        required: `${t('form-required-message')}`,
                         minLength: {
                             value: 6,
-                            message: 'Passwort is to short. Min 6 chars'
+                            message: `${t('form-incorrect-password-message')}`
                         }
                     })} />
                     <Typography fontSize={14} ml={1} color={theme.palette.error.main}>
@@ -52,11 +54,11 @@ const LoginForm = () => {
                     </Typography>
                 </Box>
                 <Box sx={sxStylesLoginForm.formBoxElement} >
-                    <Button type="submit" aria-label="login-button" variant="contained" sx={sxStylesLoginForm.formLoginInput}>Log in</Button>
+                    <Button type="submit" aria-label="login-button" variant="contained" sx={sxStylesLoginForm.formLoginInput}>{`${t('login-button')}`}</Button>
                 </Box>
             </Box>
             <Box compoent='div' sx={sxStylesLoginForm.formBoxElement}>
-                <Button onClick={handleNavigateToRegisterForm} aria-label="create-account-button" variant='contained' sx={sxStylesLoginForm.formLoginInput} >Create new account</Button>
+                <Button onClick={handleNavigateToRegisterForm} aria-label="create-account-button" variant='contained' sx={sxStylesLoginForm.formLoginInput} >{`${t('create-new-account-button')}`}</Button>
             </Box>
         </>
     );

@@ -1,5 +1,12 @@
 {
   "welcome-to": "Witaj w",
   "sing-in-to-your-account": "Zaloguj się na swoje konto",
-  "create-new-free-account": "Utwórz nowe bezpłatne konto"
+  "create-new-free-account": "Utwórz nowe bezpłatne konto",
+  "email-placeholder": "Email",
+  "password-placeholder": "Hasło",
+  "login-button": "Zaloguj się",
+  "create-new-account-button": "Utwórz konto",
+  "form-required-message": "Pole jest wymagane",
+  "form-incorrect-email-message": "Niepoprawny email",
+  "form-incorrect-password-message": "Hasło jest za krótkie. Min 6 znaków"
 }

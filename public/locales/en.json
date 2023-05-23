@@ -1,5 +1,12 @@
 {
   "welcome-to": "Welcome to",
   "sing-in-to-your-account": "Sing in to your account",
-  "create-new-free-account": "Create new free account"
+  "create-new-free-account": "Create new free account",
+  "email-placeholder": "Email",
+  "password-placeholder": "Password",
+  "login-button": "Log in",
+  "create-new-account-button": "Create new account",
+  "form-required-message": "Field is required",
+  "form-incorrect-email-message": "Inncorect email",
+  "form-incorrect-password-message": "Password is to short. Min 6 chars"
 }
