@@ -8,5 +8,12 @@
   "create-new-account-button": "Utwórz konto",
   "form-required-message": "Pole jest wymagane",
   "form-incorrect-email-message": "Niepoprawny email",
-  "form-incorrect-password-message": "Hasło jest za krótkie. Min 6 znaków"
+  "form-incorrect-password-message": "Hasło jest za krótkie. Min 6 znaków",
+  "login-placeholder": "Login",
+  "form-login-placeholder-message": "Login jest za krótki. Min 4 znaki",
+  "repeat-password-placeholder": "Powtórz hasło",
+  "form-repeat-password-message": "Hasła nie są podobne",
+  "confirm-regulations-label": "Potwierdź regulamin",
+  "register-button": "Zarejestruj się",
+  "back-to-login-button": "Wróć do logowania"
 }

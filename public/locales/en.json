@@ -8,5 +8,12 @@
   "create-new-account-button": "Create new account",
   "form-required-message": "Field is required",
   "form-incorrect-email-message": "Inncorect email",
-  "form-incorrect-password-message": "Password is to short. Min 6 chars"
+  "form-incorrect-password-message": "Password is to short. Min 6 chars",
+  "login-placeholder": "Login",
+  "form-login-placeholder-message": "Login is to short. Min 4 chars",
+  "repeat-password-placeholder": "Repeat password",
+  "form-repeat-password-message": "The passwords are not similar",
+  "confirm-regulations-label": "Confirm regulations",
+  "register-button": "Register",
+  "back-to-login-button": "Back to login"
 }
