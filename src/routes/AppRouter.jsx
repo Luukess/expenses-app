@@ -7,12 +7,10 @@ const AppRouter = () => {
 
     return (
         <>
-            <BrowserRouter>
-                <Routes>
-                    <Route exact path="/*" element={<AuthRouter />} />
-                    <Route exact path='/app/*' element={<DashboardRouter />} />
-                </Routes>
-            </BrowserRouter>
+            <Routes>
+                <Route exact path="/*" element={<AuthRouter />} />
+                <Route exact path='/app/*' element={<DashboardRouter />} />
+            </Routes>
         </>
     );
 };
