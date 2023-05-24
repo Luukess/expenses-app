@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box, IconButton, List, ListItemButton, Paper, useTheme } from "@mui/material";
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import WalletIcon from '@mui/icons-material/Wallet';
@@ -6,15 +6,19 @@ import BookIcon from '@mui/icons-material/Book';
 import PaidIcon from '@mui/icons-material/Paid';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import { sxStylesSidebar } from "./sidebar.style";
 import CustomListItem from "./components/custom-list-item/CustomListItem";
 import { useTranslation } from "react-i18next";
+import { AuthContext } from "../../contexts/auth-context/authContext";
 
 const Sidebar = (props) => {
 
     const { hideNav, setHideNav } = props;
 
     const { t } = useTranslation();
+
+    const { logOut } = useContext(AuthContext)
 
     const handleHideNav = () => {
         setHideNav(!hideNav);
@@ -48,6 +52,9 @@ const Sidebar = (props) => {
 
                         <CustomListItem hideNav={hideNav} linkName={`${t('fees-nav-item')}`}>
                             <PaidIcon sx={sxStylesSidebar.listItemIcon} />
+                        </CustomListItem>
+                        <CustomListItem hideNav={hideNav} linkName={`${t('log-out-button')}`} onClickFunction={logOut}>
+                            <PowerSettingsNewIcon sx={sxStylesSidebar.listItemIcon} />
                         </CustomListItem>
                     </List>
                 </Paper>

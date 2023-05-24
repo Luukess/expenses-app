@@ -22,5 +22,6 @@
   "planner-nav-item": "Planner",
   "fees-nav-item": "Fees",
   "incorrect-e-mail-or-password-error": "Incorrect e-mail or password",
-  "problem-with-server-occurred-error": "Problem with server occurred"
+  "problem-with-server-occurred-error": "Problem with server occurred",
+  "log-out-button": "Log out"
 }
