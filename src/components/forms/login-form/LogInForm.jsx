@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import CustomInput from "../../custom-input/CustomInput";
 import { sxStylesLoginForm } from "./loginForm.styles";
@@ -17,6 +17,8 @@ const LoginForm = () => {
 
     const { isAuth, logIn } = useContext(AuthContext);
 
+    const [errorLoginState, setErrorLoginState] = useState('');
+
     const handleNavigateToRegisterForm = () => {
         navigate('/register');
     };
@@ -30,13 +32,14 @@ const LoginForm = () => {
                 logIn(loginResponse.data);
                 navigate('/app/summary');
                 reset();
+                setErrorLoginState('');
             }
         } catch (e) {
             console.log(e);
             if (e.response.status === 404) {
-                handleErrorToastify('Niepoprawny login lub hasło');
+                setErrorLoginState(`${t('incorrect-e-mail-or-password-error')}`);
             } else {
-                handleErrorToastify('Wystąpił problem z serwerem');
+                handleErrorToastify(`${t('problem-with-server-occurred-error')}`);
             }
         }
     };
@@ -54,7 +57,8 @@ const LoginForm = () => {
                         pattern: {
                             value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                             message: `${t('form-incorrect-email-message')}`
-                        }
+                        },
+                        onChange: (e) => setErrorLoginState('')
                     })} />
                     <Typography fontSize={14} ml={1} color={theme.palette.error.main}>
                         {errors.email?.message}
@@ -66,10 +70,12 @@ const LoginForm = () => {
                         minLength: {
                             value: 6,
                             message: `${t('form-incorrect-password-message')}`
-                        }
+                        },
+                        onChange: (e) => setErrorLoginState('')
                     })} />
                     <Typography fontSize={14} ml={1} color={theme.palette.error.main}>
                         {errors.password?.message}
+                        {errorLoginState}
                     </Typography>
                 </Box>
                 <Box sx={sxStylesLoginForm.formBoxElement} >

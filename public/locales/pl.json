@@ -20,5 +20,7 @@
   "finances-nav-item": "Finanse",
   "wallets-nav-item": "Portfele",
   "planner-nav-item": "Planer",
-  "fees-nav-item": "Opłaty"
+  "fees-nav-item": "Opłaty",
+  "incorrect-e-mail-or-password-error": "Niepoprawny e-mail lub hasło",
+  "problem-with-server-occurred-error": "Wystąpił problem z serwerem"
 }
