@@ -8,15 +8,15 @@ export const useAuth = () => {
     const logIn = (data) => {
         if (data) {
             console.log('login data', data)
-            setCookie('accessToken', data.accessToken);
-            setCookie('refreshToken', data.refreshToken);
+            setCookie('accessToken', data.accessToken, { path: '/' });
+            setCookie('refreshToken', data.refreshToken, { path: '/' });
             setIsAuth(true);
         };
     };
 
     const logOut = () => {
-        removeCookie('accessToken');
-        removeCookie('refreshToken');
+        removeCookie('accessToken', { path: '/' });
+        removeCookie('refreshToken', { path: '/' });
         setIsAuth(false);
     };
 
