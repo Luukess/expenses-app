@@ -1,16 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import CustomInput from "../../custom-input/CustomInput";
 import { sxStylesLoginForm } from "./loginForm.styles";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { handleAuthLogin } from "../../../services/api/apiService";
+import { handleErrorToastify } from "../../toastify/Toastify";
+import { AuthContext } from "../../../contexts/auth-context/authContext";
 
 const LoginForm = () => {
 
     const navigate = useNavigate();
     const theme = useTheme();
     const { t } = useTranslation();
+
+    const { isAuth, logIn } = useContext(AuthContext);
 
     const handleNavigateToRegisterForm = () => {
         navigate('/register');
@@ -19,7 +24,21 @@ const LoginForm = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit = async (data) => {
-        console.log(data);
+        try {
+            const loginResponse = await handleAuthLogin(data);
+            if (loginResponse.status === 200) {
+                logIn(loginResponse.data);
+                navigate('/app/summary');
+                reset();
+            }
+        } catch (e) {
+            console.log(e);
+            if (e.response.status === 404) {
+                handleErrorToastify('Niepoprawny login lub hasło');
+            } else {
+                handleErrorToastify('Wystąpił problem z serwerem');
+            }
+        }
     };
 
     useEffect(() => {
@@ -30,7 +49,7 @@ const LoginForm = () => {
         <>
             <Box component='form' onSubmit={handleSubmit(onSubmit)}>
                 <Box sx={sxStylesLoginForm.formBoxElement} >
-                    <CustomInput aria-label="login-input" sx={sxStylesLoginForm.formLoginInput} placeholder={`${t('email-placeholder')}`} type='text' {...register('userName', {
+                    <CustomInput aria-label="login-input" sx={sxStylesLoginForm.formLoginInput} placeholder={`${t('email-placeholder')}`} type='text' {...register('email', {
                         required: `${t('form-required-message')}`,
                         pattern: {
                             value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -38,7 +57,7 @@ const LoginForm = () => {
                         }
                     })} />
                     <Typography fontSize={14} ml={1} color={theme.palette.error.main}>
-                        {errors.userName?.message}
+                        {errors.email?.message}
                     </Typography>
                 </Box>
                 <Box sx={sxStylesLoginForm.formBoxElement} >

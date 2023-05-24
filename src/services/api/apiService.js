@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:4700//api',
+    baseURL: 'http://localhost:4700/api',
     timeout: '4000',
     headers: {
         'Accept': 'application/json',
@@ -18,5 +18,5 @@ export const handleAuthLogout = async (data) => {
 };
 
 export const handleAuthRegister = async (data) => {
-    return axiosInstance.post('auth/register', data);
+    return axiosInstance.post('/auth/register', data);
 }; 
