@@ -10,6 +10,7 @@ import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import { sxStylesMobileNav } from "./mobileNav.style";
 import { useTranslation } from "react-i18next";
 import { AuthContext } from "../../../../contexts/auth-context/authContext";
+import { useNavigate } from "react-router";
 
 const MobileNav = () => {
 
@@ -17,6 +18,7 @@ const MobileNav = () => {
 
     const { t } = useTranslation();
     const { logOut } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleOpenNav = () => setIsOpen(true);
 
@@ -40,23 +42,23 @@ const MobileNav = () => {
                             </Typography>
                         </Box>
                         <List component='nav'>
-                            <ListItemButton onClick={() => { setIsOpen(false) }} sx={sxStylesMobileNav.navListItemButton}>
+                            <ListItemButton onClick={() => { setIsOpen(false); navigate('/app/summary') }} sx={sxStylesMobileNav.navListItemButton}>
                                 <DashboardIcon sx={sxStylesMobileNav.listItemIcon} /> {`${t('summary-nav-item')}`}
                             </ListItemButton>
 
-                            <ListItemButton onClick={() => { setIsOpen(false) }} sx={sxStylesMobileNav.navListItemButton}>
+                            <ListItemButton onClick={() => { setIsOpen(false); navigate('/app/finances') }} sx={sxStylesMobileNav.navListItemButton}>
                                 <ShowChartIcon sx={sxStylesMobileNav.listItemIcon} /> {`${t('finances-nav-item')}`}
                             </ListItemButton>
 
-                            <ListItemButton onClick={() => { setIsOpen(false) }} sx={sxStylesMobileNav.navListItemButton}>
+                            <ListItemButton onClick={() => { setIsOpen(false); navigate('/app/wallets') }} sx={sxStylesMobileNav.navListItemButton}>
                                 <WalletIcon sx={sxStylesMobileNav.listItemIcon} /> {`${t('wallets-nav-item')}`}
                             </ListItemButton>
 
-                            <ListItemButton onClick={() => { setIsOpen(false) }} sx={sxStylesMobileNav.navListItemButton}>
+                            <ListItemButton onClick={() => { setIsOpen(false); navigate('/app/planner') }} sx={sxStylesMobileNav.navListItemButton}>
                                 <BookIcon sx={sxStylesMobileNav.listItemIcon} /> {`${t('planner-nav-item')}`}
                             </ListItemButton>
 
-                            <ListItemButton onClick={() => { setIsOpen(false) }} sx={sxStylesMobileNav.navListItemButton}>
+                            <ListItemButton onClick={() => { setIsOpen(false); navigate('/app/fess') }} sx={sxStylesMobileNav.navListItemButton}>
                                 <PaidIcon sx={sxStylesMobileNav.listItemIcon} /> {`${t('fees-nav-item')}`}
                             </ListItemButton>
                             <ListItemButton onClick={() => { logOut() }} sx={sxStylesMobileNav.navListItemButton}>

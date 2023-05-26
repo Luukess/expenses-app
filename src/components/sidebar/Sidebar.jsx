@@ -11,12 +11,14 @@ import { sxStylesSidebar } from "./sidebar.style";
 import CustomListItem from "./components/custom-list-item/CustomListItem";
 import { useTranslation } from "react-i18next";
 import { AuthContext } from "../../contexts/auth-context/authContext";
+import { useNavigate } from "react-router";
 
 const Sidebar = (props) => {
 
     const { hideNav, setHideNav } = props;
 
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     const { logOut } = useContext(AuthContext)
 
@@ -34,25 +36,26 @@ const Sidebar = (props) => {
                         </IconButton>
                     </Box>
                     <List component="nav" aria-labelledby="nested-list-subheader">
-                        <CustomListItem hideNav={hideNav} linkName={`${t('summary-nav-item')}`}>
+                        <CustomListItem onClickFunction={() => navigate('/app/summary')} hideNav={hideNav} linkName={`${t('summary-nav-item')}`}>
                             <DashboardIcon sx={sxStylesSidebar.listItemIcon} />
                         </CustomListItem>
 
-                        <CustomListItem hideNav={hideNav} linkName={`${t('finances-nav-item')}`}>
+                        <CustomListItem onClickFunction={() => navigate('/app/finances')} hideNav={hideNav} linkName={`${t('finances-nav-item')}`}>
                             <ShowChartIcon sx={sxStylesSidebar.listItemIcon} />
                         </CustomListItem>
 
-                        <CustomListItem hideNav={hideNav} linkName={`${t('wallets-nav-item')}`}>
+                        <CustomListItem onClickFunction={() => navigate('/app/wallets')} hideNav={hideNav} linkName={`${t('wallets-nav-item')}`}>
                             <WalletIcon sx={sxStylesSidebar.listItemIcon} />
                         </CustomListItem>
 
-                        <CustomListItem hideNav={hideNav} linkName={`${t('planner-nav-item')}`}>
+                        <CustomListItem onClickFunction={() => navigate('/app/planner')} hideNav={hideNav} linkName={`${t('planner-nav-item')}`}>
                             <BookIcon sx={sxStylesSidebar.listItemIcon} />
                         </CustomListItem>
 
-                        <CustomListItem hideNav={hideNav} linkName={`${t('fees-nav-item')}`}>
+                        <CustomListItem onClickFunction={() => navigate('/app/fess')} hideNav={hideNav} linkName={`${t('fees-nav-item')}`}>
                             <PaidIcon sx={sxStylesSidebar.listItemIcon} />
                         </CustomListItem>
+
                         <CustomListItem hideNav={hideNav} linkName={`${t('log-out-button')}`} onClickFunction={logOut}>
                             <PowerSettingsNewIcon sx={sxStylesSidebar.listItemIcon} />
                         </CustomListItem>
