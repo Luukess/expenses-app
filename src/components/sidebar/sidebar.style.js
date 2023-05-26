@@ -10,7 +10,8 @@ export const sxStylesSidebar = {
         overflowWrap: 'break-word',
         overflowY: 'auto',
         transition: 'width 0.5s',
-        overflowX: 'hidden'
+        overflowX: 'hidden',
+        borderRadius: '0px',
     },
     listItemIcon: {
         marginRight: '10px',
