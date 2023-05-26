@@ -8,10 +8,10 @@ const BudgetBar = () => {
         <>
             <Box sx={{ padding: '10px 0px' }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <Typography>
+                    <Typography sx={sxStylesBudgetBar.budgetNameText}>
                         Name sdsdsdsdsd sdsdsdsdsdsdsd
                     </Typography>
-                    <Typography>
+                    <Typography sx={sxStylesBudgetBar.budgetValueText}>
                         1234 zł
                     </Typography>
                 </Box>
