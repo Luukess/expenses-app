@@ -4,6 +4,7 @@ import DonutChart from "./components/donut-chart/DonutChart";
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { Box, IconButton, Paper, Typography } from "@mui/material";
 import { sxStylesSummaryLayout } from "./summaryLayout.style";
+import BudgetBar from "./components/budget-bar/BudgetBar";
 
 const SummaryLayout = () => {
 
@@ -13,8 +14,8 @@ const SummaryLayout = () => {
                 <Grid container spacing={2}>
                     <Grid xs={12} sm={12} md={6} lg={4} >
                         <Paper sx={sxStylesSummaryLayout.gridPaper} elevation={6}>
-                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                                <Typography variant="h6" sx={{ fontSize: { xs: '18px', sm: '20px', md: '20px', lg: '20px' } }}>
+                            <Box sx={sxStylesSummaryLayout.headerContainerGridItem}>
+                                <Typography variant="h6" sx={sxStylesSummaryLayout.inscriptionInHeaderContainer}>
                                     Wydatki według kategorii
                                 </Typography>
                                 <IconButton color="primary">
@@ -28,12 +29,32 @@ const SummaryLayout = () => {
                     </Grid>
                     <Grid xs={12} sm={12} md={6} lg={4} >
                         <Paper sx={sxStylesSummaryLayout.gridPaper} elevation={6}>
-                            walets
+                            <Box sx={sxStylesSummaryLayout.headerContainerGridItem}>
+                                <Typography variant="h6" >
+                                    Portfele
+                                </Typography>
+                                <IconButton color="primary">
+                                    <MoreHorizIcon />
+                                </IconButton>
+                            </Box>
                         </Paper>
                     </Grid>
                     <Grid xs={12} sm={12} md={12} lg={4} >
                         <Paper sx={sxStylesSummaryLayout.gridPaper} elevation={6}>
-                            budgets
+                            <Box sx={sxStylesSummaryLayout.headerContainerGridItem}>
+                                <Typography variant="h6" >
+                                    Budżety
+                                </Typography>
+                                <IconButton color="primary">
+                                    <MoreHorizIcon />
+                                </IconButton>
+                            </Box>
+                            <BudgetBar />
+                            <BudgetBar />
+                            <BudgetBar />
+                            <BudgetBar />
+                            <BudgetBar />
+                            <BudgetBar />
                         </Paper>
                     </Grid>
 
