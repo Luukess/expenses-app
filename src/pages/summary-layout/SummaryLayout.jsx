@@ -9,7 +9,7 @@ const SummaryLayout = () => {
 
     return (
         <>
-            <Box mt={1}>
+            <Box mt={2}>
                 <Grid container spacing={2}>
                     <Grid xs={12} sm={12} md={6} lg={4} >
                         <Paper sx={sxStylesSummaryLayout.gridPaper} elevation={6}>
