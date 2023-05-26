@@ -23,7 +23,7 @@ const Header = () => {
 
     return (
         <>
-            <AppBar position="static">
+            <AppBar position="static" elevation={2}>
                 <Toolbar sx={{ minHeight: '64px', justifyContent: 'space-between' }}>
                     <Box component='div' sx={{ display: 'flex', alignItems: 'center' }}>
                         {authValuesContext.isAuth &&
