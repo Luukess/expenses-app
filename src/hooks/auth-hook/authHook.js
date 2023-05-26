@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 export const useAuth = () => {
     const [isAuth, setIsAuth] = useState(false);
     const [cookies, setCookie, removeCookie] = useCookies(['accessToken', 'refreshToken']);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+
     const logIn = (data) => {
         if (data) {
             setCookie('accessToken', data.accessToken, { path: '/' });
@@ -26,6 +27,14 @@ export const useAuth = () => {
             navigate('/app/summary');
         }
     }, []);
+
+    useEffect(() => {
+        if (!cookies.accessToken || !cookies.refreshToken) {
+            setIsAuth(false);
+            removeCookie('accessToken', { path: '/' });
+            removeCookie('refreshToken', { path: '/' });
+        }
+    }, [cookies.accessToken, cookies.refreshToken])
 
     return { isAuth, logIn, logOut };
 
