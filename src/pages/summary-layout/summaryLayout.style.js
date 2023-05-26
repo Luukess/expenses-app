@@ -7,6 +7,7 @@ export const sxStylesSummaryLayout = {
         padding: '10px',
         borderRadius: '10px',
         height: '410px',
+        overflowY: 'auto'
     },
     headerContainerGridItem: {
         display: 'flex',
