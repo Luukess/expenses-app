@@ -8,9 +8,11 @@ import BudgetBar from "./components/budget-bar/BudgetBar";
 import WalletBar from "./components/wallet-bar/WalletBar";
 import GridCaption from "./components/grid-caption/GridCaption";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const SummaryLayout = () => {
 
+    const navigate = useNavigate();
     const { t } = useTranslation();
 
     return (
@@ -19,7 +21,7 @@ const SummaryLayout = () => {
                 <Grid container spacing={2}>
                     <Grid xs={12} sm={12} md={6} lg={4} >
                         <Paper sx={sxStylesSummaryLayout.gridPaper} elevation={6}>
-                            <GridCaption caption={`${t('expenses-by-category-caption')}`}>
+                            <GridCaption caption={`${t('expenses-by-category-caption')}`} onClickEvent={() => navigate('/app/finances')} >
                                 <MoreHorizIcon />
                             </GridCaption>
                             <Box sx={sxStylesSummaryLayout.donutBox}>
@@ -29,7 +31,7 @@ const SummaryLayout = () => {
                     </Grid>
                     <Grid xs={12} sm={12} md={6} lg={4} >
                         <Paper sx={sxStylesSummaryLayout.gridPaper} elevation={6}>
-                            <GridCaption caption={`${t('wallets-caption')}`}>
+                            <GridCaption caption={`${t('wallets-caption')}`} onClickEvent={() => navigate('/app/wallets')} >
                                 <MoreHorizIcon />
                             </GridCaption>
                             <WalletBar />
@@ -42,7 +44,7 @@ const SummaryLayout = () => {
                     </Grid>
                     <Grid xs={12} sm={12} md={12} lg={4} >
                         <Paper sx={sxStylesSummaryLayout.gridPaper} elevation={6}>
-                            <GridCaption caption={`${t('budgets-caption')}`}>
+                            <GridCaption caption={`${t('budgets-caption')}`} onClickEvent={() => navigate('/app/planner')}>
                                 <MoreHorizIcon />
                             </GridCaption>
                             <BudgetBar />

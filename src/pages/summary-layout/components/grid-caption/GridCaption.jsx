@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography, IconButton } from "@mui/material";
 import { sxStylesGridCaption } from "./gridCaption.style";
 
-const GridCaption = ({ children, caption }) => {
+const GridCaption = ({ children, caption, onClickEvent }) => {
 
     return (
         <>
@@ -10,7 +10,7 @@ const GridCaption = ({ children, caption }) => {
                 <Typography variant="h6" sx={sxStylesGridCaption.captionTypography}>
                     {caption}
                 </Typography>
-                <IconButton color="primary">
+                <IconButton color="primary" onClick={() => onClickEvent()}>
                     {children}
                 </IconButton>
             </Box>
