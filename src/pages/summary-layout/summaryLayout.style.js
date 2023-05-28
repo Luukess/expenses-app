@@ -9,17 +9,4 @@ export const sxStylesSummaryLayout = {
         height: '410px',
         overflowY: 'auto'
     },
-    headerContainerGridItem: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-    },
-    inscriptionInHeaderContainer: {
-        fontSize: {
-            xs: '18px',
-            sm: '20px',
-            md: '20px',
-            lg: '20px'
-        }
-    }
 };
