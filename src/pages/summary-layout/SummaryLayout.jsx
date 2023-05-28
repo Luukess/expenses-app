@@ -7,8 +7,11 @@ import { sxStylesSummaryLayout } from "./summaryLayout.style";
 import BudgetBar from "./components/budget-bar/BudgetBar";
 import WalletBar from "./components/wallet-bar/WalletBar";
 import GridCaption from "./components/grid-caption/GridCaption";
+import { useTranslation } from "react-i18next";
 
 const SummaryLayout = () => {
+
+    const { t } = useTranslation();
 
     return (
         <>
@@ -16,7 +19,7 @@ const SummaryLayout = () => {
                 <Grid container spacing={2}>
                     <Grid xs={12} sm={12} md={6} lg={4} >
                         <Paper sx={sxStylesSummaryLayout.gridPaper} elevation={6}>
-                            <GridCaption caption={'Wydatki według kategorii'}>
+                            <GridCaption caption={`${t('expenses-by-category-caption')}`}>
                                 <MoreHorizIcon />
                             </GridCaption>
                             <Box sx={sxStylesSummaryLayout.donutBox}>
@@ -26,7 +29,7 @@ const SummaryLayout = () => {
                     </Grid>
                     <Grid xs={12} sm={12} md={6} lg={4} >
                         <Paper sx={sxStylesSummaryLayout.gridPaper} elevation={6}>
-                            <GridCaption caption={'Portfele'}>
+                            <GridCaption caption={`${t('wallets-caption')}`}>
                                 <MoreHorizIcon />
                             </GridCaption>
                             <WalletBar />
@@ -39,7 +42,7 @@ const SummaryLayout = () => {
                     </Grid>
                     <Grid xs={12} sm={12} md={12} lg={4} >
                         <Paper sx={sxStylesSummaryLayout.gridPaper} elevation={6}>
-                            <GridCaption caption={'Budżety'}>
+                            <GridCaption caption={`${t('budgets-caption')}`}>
                                 <MoreHorizIcon />
                             </GridCaption>
                             <BudgetBar />
