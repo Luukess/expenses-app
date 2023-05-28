@@ -5,6 +5,7 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { Box, IconButton, Paper, Typography } from "@mui/material";
 import { sxStylesSummaryLayout } from "./summaryLayout.style";
 import BudgetBar from "./components/budget-bar/BudgetBar";
+import WalletBar from "./components/wallet-bar/WalletBar";
 
 const SummaryLayout = () => {
 
@@ -37,6 +38,12 @@ const SummaryLayout = () => {
                                     <MoreHorizIcon />
                                 </IconButton>
                             </Box>
+                            <WalletBar />
+                            <WalletBar />
+                            <WalletBar />
+                            <WalletBar />
+                            <WalletBar />
+                            <WalletBar />
                         </Paper>
                     </Grid>
                     <Grid xs={12} sm={12} md={12} lg={4} >
